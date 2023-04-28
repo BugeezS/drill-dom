@@ -43,6 +43,9 @@ document.body.addEventListener("keyup", function (event) {
       const item = shuffledItems[i];
       list.insertBefore(item, fastAndFuriousItem.nextSibling);
     }
+  } else if (event.key === "d") {
+    const clone = fastAndFuriousItem.cloneNode(true);
+    list.insertBefore(clone, fastAndFuriousItem.nextSibling);
   }
 });
 
