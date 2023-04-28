@@ -24,7 +24,7 @@ for (let i = 0; i < items.length; i++) {
 
   for (let j = i + 1; j < items.length; j++) {
     const nextItem = items[j];
-    if (nextItem.nodeType === 1 && item.textContent === nextItem.textContent) {
+    if (nextItem.nodeType === 1 && item.isEqualNode(nextItem)) {
       list.removeChild(nextItem);
     }
   }
