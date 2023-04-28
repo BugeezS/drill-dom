@@ -19,6 +19,37 @@ for (let i = 0; i < items.length; i++) {
   }
 }
 
+const newDiv = document.createElement("div");
+const select = document.createElement("select");
+const option1 = document.createElement("option");
+option1.textContent = "important franchises";
+const option2 = document.createElement("option");
+option2.textContent = "normal franchises";
+
+select.appendChild(option1);
+select.appendChild(option2);
+newDiv.appendChild(select);
+
+list.parentNode.insertBefore(newDiv, list);
+
+select.addEventListener("change", function () {
+  if (select.value === "important franchises") {
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.classList.contains("important")) {
+        item.style.visibility = "visible";
+      } else {
+        item.style.visibility = "hidden";
+      }
+    }
+  } else {
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      item.style.visibility = "visible";
+    }
+  }
+});
+
 for (let i = 0; i < items.length; i++) {
   const item = items[i];
   if (item.nodeType === 1) {
